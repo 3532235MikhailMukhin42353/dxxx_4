@@ -1,17 +1,10 @@
-# ЗАДАЧА 22
-import random
+#задача 1
+def stepen (num_one, num_two):
+    if num_two == 1:
+        return num_one
+    if num_two != 1:
+        return num_one * stepen(num_one, num_two-1)
 
-number_one = int(input('Введите первое кличество цифр: '))
-number_two = int(input('Введите второе кличество цифр: '))
-
-my_list_one = [random.randint(0,20) for _ in range(number_one)]
-my_list_two = [random.randint(0,20) for _ in range(number_two)]
-print(f'Первый список чисел = {my_list_one}')
-print(f'Второй список чисел = {my_list_two}')
-my_list_one.sort()
-print(f'Первый отсортированный список: {my_list_one}')
-my_list_two.sort()
-print(f'Второй отсортированный список: {my_list_two}')
-
-itog = list(set(my_list_one) & set(my_list_two))
-print(itog)
+num_one = int(input('Число: '))
+num_two = int(input('Степень: '))
+print(stepen(num_one, num_two))
